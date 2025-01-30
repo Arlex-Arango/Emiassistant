@@ -193,7 +193,7 @@ header {
     font-size: 2.5rem;
     font-weight: bold;
     color: #ffffff; 
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .highlitght {
     color: #22c4ff; 
@@ -204,7 +204,7 @@ header {
     font-family: "futura", sans-serif;
     font-size: 1.5rem;
     font-weight: 300;
-    color: #666;
+    color: #ffffff;
     max-width: 800px;
     margin: 0 auto 20px;
 }
@@ -303,7 +303,7 @@ header {
     display: flex; /* Mantén flex en el contenedor */
     flex-wrap: wrap; /* Permite que las cajas se ajusten en múltiples filas */
     justify-content: center; /* Alinea las cajas en el centro */
-    gap: 20px; /* Espacio entre las cajas */
+    gap: 20px; 
     padding-top: 70px;
     padding-bottom: 20px;
 }
@@ -312,3 +312,16 @@ header {
     margin-top: 10px;
     color: white;
 }
+
+.CRM {
+    color: #fff;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.CRM h1 {
+    margin: 15px; 
+    gap: 20px;
+    justify-content: center; 
+    text-align: center;  
+}  
