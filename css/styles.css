@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #152c90 0%, #1e1e1e 100%);
+    padding-top: 60px; 
+}
+
+header {
+    position: fixed;
+    top: 5px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    width: 93%; 
+    z-index: 1000;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(1, 45, 93, 0.9));
+    border-radius: 10px; 
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); 
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.logo a {
+    color: #a09c9c;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+    position: relative;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00a2f9;
+}
+
+/* Menú desplegable */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    list-style: none;
+    padding: 0.5rem 0;
+    border-radius: 5px;
+    min-width: 150px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-menu li {
+    padding: 0.5rem 1rem;
+}
+
+.dropdown-menu a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    font-size: 1rem;
+}
+
+.dropdown-menu a:hover {
+    color: #39dce1;
+}
+
+/* Botones de autenticación */
+.auth-links {
+    display: flex;
+    align-items: center;
+}
+
+.login-link {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 1rem;
+    font-size: 1rem;
+}
+
+.join-now-btn {
+    background-color: #06c6db;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.join-now-btn:hover {
+    background-color: #3f9687;
+}
+
+/* Menú hamburguesa */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    background-color: #fff;
+    width: 25px;
+    height: 3px;
+    margin: 4px 0;
+    display: block;
+}
+
+/* Estilos para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #222;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 1rem 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+        text-align: center;
+    }
+
+    .auth-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+/* Contenedor General */
+.container {
+    max-width: 1200px; 
+    width: 94%; 
+    margin: 0 auto; 
+    text-align: center; 
+    padding: 50px 20px; 
+}
+
+/* Sección Completa */
+#features {
+    background: #f4f4f4; /* Fondo suave */
+    padding: 60px 0; /* Espaciado arriba y abajo */
+}
+
+/* Títulos */
+.home-title {
+    font-family: "Avenir", Helvetica, sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff; 
+    margin-bottom: 10px;
+}
+.highlitght {
+    color: #22c4ff; 
+    font-weight: bold; 
+}
+
+.sub-title {
+    font-family: "futura", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+/* Descripción */
+.description {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem;
+    color: #ffffff;
+    max-width: 800px;
+    margin: 50px;
+
+}
+
+/* Botón */
+.cta-button {
+    display: block;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.imagen_1 {
+    display: block;
+    margin: 50px auto;
+}
+
+.cta-button:hover {
+    background-color: #e64a19;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .sub-title {
+        font-size: 1.3rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+}
