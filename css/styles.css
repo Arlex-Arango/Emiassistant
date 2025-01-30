@@ -23,7 +23,6 @@ header {
     box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); 
 }
 
-
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -172,6 +171,7 @@ header {
         display: block;
     }
 }
+
 /* Contenedor General */
 .container {
     max-width: 1200px; 
@@ -216,16 +216,12 @@ header {
     color: #ffffff;
     max-width: 800px;
     margin: 50px;
-
 }
-
-
 
 .imagen_1 {
     display: block;
     margin: 50px auto;
 }
-
 
 /* Responsivo */
 @media (max-width: 768px) {
@@ -258,8 +254,11 @@ header {
  
 .box-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 10px; 
+    border-radius: 15px;
+    border: #00a2f9;
 }
 
 .box {
@@ -277,23 +276,39 @@ header {
     margin: 12px;
     border: 2px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
-    display: flex;
+    position: relative;
 }
- .box img {
-    display: block;
-    margin: 6px;
-    max-width: 90%;
- }
+
+.box img {
+    width: 94%; 
+    height: 90px;
+    object-fit: cover; 
+    border-radius: 8px;
+    position: absolute;
+    top: 10px; 
+}
+
+.box-title {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 100px; /* Da espacio entre la imagen y el título */
+    color: #fff;
+    font-weight: bold;
+}
 
 .container2 {
     background: linear-gradient(90deg, black, rgb(1, 45, 93, 0.9));
     align-items: center;
     text-align: center;
-    display: flex;
-    flex-direction: column;
+    display: flex; /* Mantén flex en el contenedor */
+    flex-wrap: wrap; /* Permite que las cajas se ajusten en múltiples filas */
+    justify-content: center; /* Alinea las cajas en el centro */
+    gap: 20px; /* Espacio entre las cajas */
     padding-top: 70px;
+    padding-bottom: 20px;
 }
 
 .container2 h1 {
     margin-top: 10px;
+    color: white;
 }
