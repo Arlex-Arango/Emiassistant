@@ -195,6 +195,7 @@ header {
     color: #ffffff; 
     margin-bottom: 10px;
 }
+
 .highlitght {
     color: #22c4ff; 
     font-weight: bold; 
@@ -204,9 +205,15 @@ header {
     font-family: "futura", sans-serif;
     font-size: 1.5rem;
     font-weight: 300;
-    color: #ffffff;
+    color: #ffffff; /* Color de texto */
     max-width: 800px;
-    margin: 0 auto 20px;
+    margin: 10px auto 20px;
+    text-align: center; /* Centrar texto */
+    background: linear-gradient(100deg, #1e1e1e 0%, #152c90 100%); /* Fondo degradado */
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Borde suave */
+    border-radius: 15px; /* Esquinas redondeadas */
+    padding: 10px 20px; /* Espaciado interno */
+    
 }
 
 /* Descripción */
@@ -215,7 +222,7 @@ header {
     font-size: 1.2rem;
     color: #ffffff;
     max-width: 800px;
-    margin: 50px;
+    margin: 50px auto;
 }
 
 .imagen_1 {
@@ -262,7 +269,7 @@ header {
 }
 
 .box {
-    background: linear-gradient(90deg, rgba(1, 45, 93, 0.9), black);
+    background: linear-gradient(135deg, #1e1e1e 0%, #152c90 100%);
     color: white;
     width: 150px;
     height: 150px;
@@ -297,7 +304,7 @@ header {
 }
 
 .container2 {
-    background: linear-gradient(90deg, black, rgb(1, 45, 93, 0.9));
+    background: linear-gradient(135deg, #152c90 0%, #1e1e1e 100%);
     align-items: center;
     text-align: center;
     display: flex; /* Mantén flex en el contenedor */
@@ -308,20 +315,77 @@ header {
     padding-bottom: 20px;
 }
 
-.container2 h1 {
-    margin-top: 10px;
-    color: white;
+.caracteristic {
+    max-width: 1200px; 
+    width: 94%; 
+    margin: 0 auto; 
+    text-align: center; 
+    padding: 50px 20px; 
+    background: linear-gradient(135deg, #152c90 0%, #1e1e1e 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 2px solid #d3d3d348; /* Borde gris leve */
+    border-radius: 20px; /* Radio de borde de 20px */
 }
 
-.CRM {
-    color: #fff;
+
+.parrafo {
+    max-width: 1200px;
+    margin: 10px auto;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    width: 92%;
+    background: linear-gradient(100deg, #1e1e1e 0%, #152c90 100%);
+    color: white;
+    border: 2px solid;
+    border-radius: 15px;
+    line-height: 1.8;
+    padding: 10px 20px;
 }
 
-.CRM h1 {
-    margin: 15px; 
-    gap: 20px;
-    justify-content: center; 
-    text-align: center;  
-}  
+.home-title2 {
+    font-family: "Avenir", Helvetica, sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff; 
+    margin-bottom: 10px;
+    justify-self: start;
+}
+
+.parrafo1 {
+    width: 200px; /* Ancho fijo */
+    height: 155px; /* Alto fijo */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    text-align: center;
+    font-size: 15px;
+    background: linear-gradient(100deg, #1e1e1e 0%, #152c90 100%);
+    color: white;
+    border: 2px solid white;
+    border-radius: 15px;
+    line-height: 1.5;
+    padding: 10px;
+}
+
+.Beneficios {
+    max-width: 1200px;
+    width: 94%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 20px;
+    display: flex; /* Activa Flexbox */
+    flex-direction: column; /* Mantiene el título en la parte superior */
+    align-items: center; 
+}
+
+.benefits-container {
+    display: flex; /* Activa Flexbox */
+    flex-wrap: wrap; /* Permite que las cajas pasen a otra línea si no caben */
+    justify-content: center; /* Centra las cajas horizontalmente */
+    gap: 15px; /* Espaciado entre cajas */
+    margin-top: 20px; 
+}
