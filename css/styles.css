@@ -564,3 +564,180 @@ ul li i {
     }
 }
 
+/* Contenedor principal de la calculadora */
+.final-calculator {
+    padding: 40px;
+    background: linear-gradient(135deg, #152c90 0%, #1e1e1e 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator-wrapper {
+    background: linear-gradient(13deg, #5b5c5e 0%, #838383 100%);
+    display: flex;
+    flex-direction: row; /* Organiza los elementos en filas */
+    gap: 20px; /* Espaciado entre sliders y resultados */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    max-width: 800px;
+    width: 100%;
+}
+
+.calculator-title {
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: #22c4ff;
+}
+
+.brand {
+    color: #020405;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Organización de los elementos */
+.calculator-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaciado entre los elementos */
+    flex: 1; /* Ocupa más espacio en comparación con los resultados */
+}
+
+.input-group {
+    position: relative; /* Contenedor relativo para ubicar los números sobre cada slider */
+    margin-bottom: 40px;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    
+}
+
+.input-with-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f4f4f4; /* Fondo gris claro */
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 80px; /* Reduce el ancho */
+    position: absolute;
+    right: 0; /* Ubica el cuadro a la derecha */
+    top: -35px; /* Ajusta la posición vertical para que quede sobre el slider */
+}
+
+.input-with-symbol span {
+    color: #22c4ff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.input-with-symbol input {
+    border: none;
+    background: transparent;
+    color: #000000;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    outline: none;
+    width: 50px;
+    text-align: right;
+}
+
+input[type="range"] {
+    width: 100%;
+    appearance: none;
+    height: 8px;
+    background: #ffffff;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #22c4ff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Contenedor de resultados */
+.results-container {
+    background: #1a1c28;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    flex: 0.5; /* Ocupa menos espacio que los sliders */
+}
+
+.result-title {
+    font-size: 16px;
+    color: #22c4ff;
+    margin-bottom: 5px;
+}
+
+.result-value {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.cta-text {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.join-now-btn {
+    background: #ffda44;
+    color: #0d0f18;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.join-now-btn:hover {
+    background: #ffd700;
+}
+
+footer {
+    background: #1e1e1e; 
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px; 
+    border-top: 2px solid #22c4ff; 
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer ul li a {
+    color: #22c4ff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
