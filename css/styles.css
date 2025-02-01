@@ -241,6 +241,11 @@ header {
 .imagen_1 {
     display: block;
     margin: 50px auto;
+    width: 800px;
+    height: 400px;
+    border-radius: 15px;
+    border: 1px solid rgba(15, 226, 212, 0.619);
+    border-color: #00a2f9;
 }
 
 /* Responsivo */
@@ -1017,3 +1022,220 @@ footer {
     background-color: #1EBEA5;
 }
 
+/* Estilos para la sección de comparación EMI IO */
+.emi-io-comparison {
+    padding: 50px 20px;
+    background: linear-gradient(135deg, rgba(47, 54, 64, 0.9) 0%, rgba(57, 48, 122, 0.9) 100%);
+    border-radius: 20px;
+    color: #fff;
+    margin: 20px;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+}
+
+.emi-io-comparison .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.comparison-title h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.comparison-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.comparison-block {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.comparison-block h3 {
+    font-size: 1.8rem;
+    color: #22c4ff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.comparison-block ul {
+    list-style: none;
+    padding: 0;
+}
+
+.comparison-block ul li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    margin-right: 10px;
+}
+
+.red-x {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+.green-check {
+    color: #00ff00;
+    font-weight: bold;
+}
+
+/* Estilos generales para la sección Digital Clone */
+.digital-clone {
+    padding: 50px 20px;
+    background: linear-gradient(135deg, rgba(47, 54, 64, 0.9) 0%, rgba(57, 48, 122, 0.9) 100%);
+    border-radius: 20px;
+    color: #fff;
+    margin: 20px;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+}
+
+.digital-clone .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.clone-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.clone-title h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #22c4ff;
+}
+
+.clone-title .subheading {
+    font-size: 1.2rem;
+    color: #dcdcdc;
+}
+
+/* Disposición para las secciones */
+.clone-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.clone-content.reverse {
+    flex-direction: row-reverse;
+}
+
+.clone-section {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.clone-section h4 {
+    font-size: 0.9rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.clone-section .subhighlight {
+    font-size: 1.5rem;
+    color: #22c4ff;
+    margin-bottom: 20px;
+}
+
+.clone-section .benefits {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    
+}
+
+.clone-section .benefits li {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+}
+
+.clone-section .benefits li i {
+    margin-right: 10px;
+}
+
+.green {
+    color: green;
+}
+
+/* Estilos para la imagen y el texto */
+.clone-visual {
+    flex: 1;
+    text-align: center;
+}
+
+.clone-visual img {
+    width: 100%;             
+    height: auto;            
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.clone-content:not(.reverse) .clone-visual {
+    order: 2; /
+}
+
+.clone-content:not(.reverse) .clone-section {
+    order: 1; 
+}
+
+
+.clone-content.reverse .clone-visual {
+    order: 1; 
+}
+
+.clone-content.reverse .clone-section {
+    order: 2; 
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .clone-content {
+        flex-direction: column; /* En pantallas pequeñas, la imagen y el texto se apilan */
+        gap: 10px;               /* Reduce el espacio entre los elementos */
+    }
+
+    .clone-section {
+        flex: 1 1 100%;         /* Las secciones ocupan el 100% del contenedor en móviles */
+    }
+
+    .clone-visual img {
+        width: 100%;            /* Asegura que la imagen ocupe todo el ancho */
+        height: auto;           /* Mantiene la proporción de la imagen */
+    }
+
+    .clone-visual {
+        margin-bottom: 20px;    /* Espacio debajo de la imagen cuando se apilan */
+    }
+
+    .clone-section h3, .clone-section p {
+        text-align: center;     /* Centra el texto cuando se apilan */
+    }
+}
