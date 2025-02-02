@@ -25,6 +25,7 @@ header {
 
 /* Contenedor del menú de navegación */
 .navbar {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,6 +34,7 @@ header {
     width: 100%;
     padding: 0 10px;
     height: 50px;
+    z-index: 1000;
 }
 
 /* Logo */
@@ -69,6 +71,7 @@ header {
 /* Estilo del menú desplegable */
 .dropdown {
     position: relative;
+    display: inline-block;
 }
 
 .dropdown-menu {
@@ -77,8 +80,6 @@ header {
     top: 100%;
     left: 0;
     background-color: rgba(0, 0, 0, 0.9);
-    list-style: none;
-    padding: 0;
     border-radius: 5px;
     min-width: 160px;
     opacity: 0;
@@ -676,6 +677,7 @@ header {
 .planes-precios h1 {
     font-size: 3rem; 
     font-weight: bold;
+    text-align: center;
    
 }
 
@@ -685,7 +687,7 @@ header {
 
 .pricing-plan {
     background-color: #2f2f47;
-    padding: 2rem 2rem 2.5rem; /* Aumenta el padding en la parte inferior (15px más) */
+    padding: 2rem 2rem 2.5rem; 
     border-radius: 10px;
     width: 300px;
     text-align: left;
@@ -1587,3 +1589,4 @@ section.sales {
 .join-now-btn:hover {
     background-color: #1a90d8;
 }
+
