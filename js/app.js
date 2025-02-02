@@ -14,9 +14,9 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('footer-container').innerHTML = data;
         });
 
-    // Verificar si estamos en index.html o pricing.html para cargar la calculadora
+    // Verificar si estamos en index.html, pricing.html o plans.html para cargar la calculadora
     const currentPage = window.location.pathname.split("/").pop(); // Obtener el nombre del archivo
-    if (currentPage === "index.html" || currentPage === "pricing.html") {
+    if (currentPage === "index.html" || currentPage === "pricing.html" || currentPage === "plans.html") {
         // Incluir la calculadora solo en estas páginas
         fetch('calculator.html')
             .then(response => response.text())
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
             })
             .catch(error => console.error("Error al cargar la calculadora:", error));
     }
-    
+
     // Función para manejar el menú hamburguesa
     function setupMenuToggle() {
         const menuToggle = document.getElementById("mobile-menu");
@@ -95,4 +95,19 @@ document.addEventListener("DOMContentLoaded", function() {
         // Calcular los resultados iniciales
         calculateResults();
     }
+
+    // Inicializar FAQ
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        const icon = question.querySelector('i');
+
+        question.addEventListener('click', () => {
+            const isVisible = answer.style.display === 'block';
+            answer.style.display = isVisible ? 'none' : 'block';
+            icon.classList.toggle('fa-plus');
+            icon.classList.toggle('fa-minus');
+        });
+    });
 });

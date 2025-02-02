@@ -23,18 +23,19 @@ header {
     box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); 
 }
 
+/* Contenedor del menú de navegación */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 960px;  
+    max-width: 960px;
     margin: 0 auto;
     width: 100%;
     padding: 0 10px;
-    height: 30px;  
+    height: 50px;
 }
 
-
+/* Logo */
 .logo a {
     color: #a09c9c;
     text-decoration: none;
@@ -42,6 +43,7 @@ header {
     font-weight: bold;
 }
 
+/* Estilo del menú principal */
 .nav-links {
     list-style: none;
     display: flex;
@@ -64,7 +66,11 @@ header {
     color: #00a2f9;
 }
 
-/* Menú desplegable */
+/* Estilo del menú desplegable */
+.dropdown {
+    position: relative;
+}
+
 .dropdown-menu {
     display: none;
     position: absolute;
@@ -72,22 +78,25 @@ header {
     left: 0;
     background-color: rgba(0, 0, 0, 0.9);
     list-style: none;
-    padding: 0.5rem 0;
+    padding: 0;
     border-radius: 5px;
-    min-width: 150px;
+    min-width: 160px;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
 }
 
-.dropdown:hover .dropdown-menu {
+/* Asegurar que el submenú sea seleccionable */
+.dropdown:hover .dropdown-menu,
+.dropdown-menu:hover {
     display: block;
     opacity: 1;
     visibility: visible;
 }
 
 .dropdown-menu li {
-    padding: 0.5rem 1rem;
+    padding: 10px 15px;
 }
 
 .dropdown-menu a {
@@ -101,6 +110,7 @@ header {
     color: #39dce1;
 }
 
+    
 /* Botones de autenticación */
 .auth-links {
     display: flex;
@@ -469,6 +479,7 @@ header {
     line-height: 1.6;
 }
 
+/* Estilos para la sección de entrenamiento */
 .training {
     background: linear-gradient(135deg, rgba(111, 111, 112, 0.5) 0%, rgba(57, 48, 122, 0.5) 100%);
     padding: 50px 20px;
@@ -528,8 +539,16 @@ header {
     background-color: #1a90d8;
 }
 
+.training-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .training-image img {
     max-width: 100%;
+    height: auto;
     border-radius: 10px;
 }
 
@@ -1238,4 +1257,148 @@ footer {
     .clone-section h3, .clone-section p {
         text-align: center;     /* Centra el texto cuando se apilan */
     }
+}
+/* Estilos para el gráfico promocional */
+.promo-graphic {
+    background: linear-gradient(135deg, rgba(47, 54, 64, 0.9) 0%, rgba(57, 48, 122, 0.9) 100%);
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.promo-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #22c4ff;
+}
+
+.promo-header .highlight {
+    color: #22c4ff;
+}
+
+.promo-stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.stat {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    max-width: 30%;
+    text-align: center;
+}
+
+.stat i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #22c4ff;
+}
+
+.stat p {
+    font-size: 1.2rem;
+    color: #dcdcdc;
+}
+/* Estilos para la sección de Preguntas Frecuentes (FAQs) */
+.faq-section {
+    padding: 50px 20px;
+    background: linear-gradient(135deg, rgba(47, 54, 64, 0.9) 0%, rgba(57, 48, 122, 0.9) 100%);
+    border-radius: 20px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    margin: 20px;
+}
+
+.faq-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.faq-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-title {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-right: auto; /* Título alineado a la izquierda */
+}
+
+.view-more {
+    background-color: #22c4ff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: auto; 
+}
+
+.view-more:hover {
+    background-color: #1a90d8;
+}
+
+.faq-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-question-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.faq-question-wrapper:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 1.2rem;
+    color: #22c4ff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.faq-question i {
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    background: rgba(255, 255, 255, 0.1);
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    display: none;
+}
+
+.faq-answer p {
+    color: #dcdcdc;
+    font-size: 1.1rem;
+    margin: 0;
 }
