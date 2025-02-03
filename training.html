@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAINING FREE</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://use.typekit.net/your-font-kit-id.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div id="navbar-container"></div>
+    </header>
+    <section class="form-section">
+        <div class="container">
+            <div class="video-title-container">
+                <div class="video-title">Learn how to get 1 client<br> a day using<br> WhatsApp and <br> Artificial Intelligence!
+
+                </div>
+                <div class="video-container">
+                    <video width="100%" controls>
+                        <source src="path-to-your-video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+    
+            <div class="training-form">
+                <h2>Free Training</h2>
+                <p>📲 In this short video training, you’ll see through a real case how I attract leads, move them to WhatsApp, and convert them into clients.</p>
+                <p>✍️ The entire process from start to finish, explained step by step.</p>
+                <p>⏳ It will be available for a limited time.</p>
+                <p>👇 Sign up now and get it</p>
+    
+                <form id="training-form" class="training-form">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required placeholder="Enter your name" />
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required placeholder="Enter your email" />
+                    <button type="submit">Submit</button>
+                    <p id="form-message"></p> <!-- Mensaje de error o éxito -->
+                </form>
+            </div>
+        </div>
+    </section>
+    <script>
+        // Función para manejar el formulario
+        document.getElementById('training-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+        
+            // Obtén los valores de los campos
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('form-message');
+        
+            // Validar que los campos no estén vacíos
+            if (!name || !email) {
+                message.textContent = "Error! Please enter this field"; // Mensaje de error si los campos están vacíos
+                message.style.color = 'red';
+                return;
+            }
+        
+            // Intentar conectar con la base de datos (ejemplo de lógica, debes adaptarlo a tu backend)
+            const isDatabaseConnected = false; // Simulamos que no se puede conectar a la base de datos
+        
+            if (!isDatabaseConnected) {
+                message.textContent = "Could not connect to the database. Please try again."; 
+                message.style.color = 'red';
+            } else {
+                message.textContent = "Watch the video"; 
+                message.style.color = 'green';
+        
+                // Llamar a la función para reproducir el video aquí
+                playVideo(); // Esta función debes implementarla para reproducir el video
+            }
+        });
+        
+        // Función para reproducir el video
+        function playVideo() {
+            const video = document.getElementById("myVideo"); // Asumimos que el video tiene el ID "myVideo"
+            if (video) {
+                video.play(); // Reproduce el video si todo es correcto
+            }
+        }
+        </script>
+    
+    <section class="training-section">
+        <div class="container">
+            <div class="section-header">
+                <h1>In this <span class="moztaza">TRAINING</span> I will teach you:</h1>
+            </div>
+            <div class="training-content">
+                <div class="training-item">
+                    <div class="icon">
+                        <img src="Imagenes/responsive-design.png" alt="Icon 1"> <!-- Reemplaza con tu ícono -->
+                    </div>
+                    <h2>Training Program 1</h2>
+                    <p>This is the first training program with all the necessary steps to get started.</p>
+                </div>
+                <div class="training-item">
+                    <div class="icon">
+                        <img src="Imagenes/planning.png" alt="Icon 2"> <!-- Reemplaza con tu ícono -->
+                    </div>
+                    <h2>Training Program 2</h2>
+                    <p>This is the second training program that dives deeper into the topics.</p>
+                </div>
+                <div class="training-item">
+                    <div class="icon">
+                        <img src="Imagenes/coin.png" alt="Icon 3"> <!-- Reemplaza con tu ícono -->
+                    </div>
+                    <h2>Training Program 3</h2>
+                    <p>This program provides advanced resources and materials for experts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer>
+        <div id="footer-container"></div>
+    </footer>
+    <script src="js/app.js"></script>
+</body>    
