@@ -240,6 +240,11 @@ header {
     .description {
         font-size: 1rem;
     }
+
+    .imagen_1 {
+       width: 100%;
+       height: auto;
+    }
 }
 
 .container1 {
@@ -408,32 +413,35 @@ header {
     text-align: center;
 }
 
+/* Título */
 .home-title2 {
-    font-size: 2.5rem; 
-    font-weight: 700; 
-    color: #ffffff; 
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
     margin-bottom: 20px;
     text-align: center;
-    align-items: center;
 }
 
+/* Contenedor de Beneficios */
 .benefits-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 20px; 
+    gap: 20px;
 }
 
+/* Beneficio Individual */
 .benefit {
     background: linear-gradient(135deg, #272727 0%, #1532b5 100%);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    flex-basis: calc(50% - 20px); /* Ajuste para la anchura de cada caja */
+    flex-basis: calc(50% - 20px); /* 2 columnas en PC */
     display: flex;
     align-items: center;
 }
 
+/* Título del Beneficio */
 .benefit-title {
     font-weight: bold;
     font-size: 1rem;
@@ -442,18 +450,52 @@ header {
     color: #2abfff;
 }
 
+/* Descripción */
 .benefit-description {
     font-size: 1rem;
     color: #dcdcdc;
     line-height: 1.6;
 }
 
-/* Estilos para la sección de entrenamiento */
+/* 📌 Responsive para tablets */
+@media screen and (max-width: 1024px) {
+    .benefits-container {
+        justify-content: center;
+    }
+    
+    .benefit {
+        flex-basis: 100%; /* 1 columna */
+        text-align: left;
+    }
+}
+
+/* 📌 Responsive para móviles */
+@media screen and (max-width: 768px) {
+    .home-title2 {
+        font-size: 2rem; /* Reduce tamaño del título */
+    }
+
+    .benefit {
+        padding: 15px;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .benefit-title {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .benefit-description {
+        font-size: 0.95rem;
+    }
+}
+
 .training {
     background: linear-gradient(135deg, rgba(111, 111, 112, 0.5) 0%, rgba(57, 48, 122, 0.5) 100%);
     padding: 50px 20px;
     border: 2px solid #d3d3d348; /* Borde gris leve */
-    border-radius: 20px; /* Radio de borde de 20px */
+    border-radius: 20px;
     max-width: 1200px;
     width: 98%;
     margin: 0 auto 50px;
@@ -464,6 +506,7 @@ header {
     color: #fff;
 }
 
+/* Contenedor flexible */
 .training-container {
     display: flex;
     justify-content: space-between;
@@ -472,18 +515,20 @@ header {
     gap: 20px;
 }
 
+/* Contenido */
 .training-content {
     flex: 1;
-    margin-right: 20px;
 }
 
+/* Título */
 .training-title {
     font-size: 2rem;
     font-weight: bold;
-    color: #22c4ff; /* Resalta el título */
+    color: #22c4ff;
     margin-bottom: 20px;
 }
 
+/* Lista */
 .training ul {
     list-style-type: none;
     padding: 0;
@@ -493,6 +538,7 @@ header {
     margin-bottom: 10px;
 }
 
+/* Botón */
 .training-link {
     display: inline-block;
     margin-top: 20px;
@@ -508,6 +554,7 @@ header {
     background-color: #1a90d8;
 }
 
+/* Imagen */
 .training-image {
     flex: 1;
     display: flex;
@@ -520,6 +567,43 @@ header {
     height: auto;
     border-radius: 10px;
 }
+
+/* 📌 Responsive para tablets */
+@media screen and (max-width: 1024px) {
+    .training-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .training-content {
+        margin: 0;
+    }
+}
+
+/* 📌 Responsive para móviles */
+@media screen and (max-width: 768px) {
+    .training {
+        padding: 30px 15px;
+    }
+
+    .training-title {
+        font-size: 1.8rem;
+    }
+
+    .training-container {
+        gap: 15px;
+    }
+
+    .training ul li {
+        font-size: 1rem;
+    }
+
+    .training-link {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
 
 
 
@@ -544,7 +628,6 @@ header {
     font-weight: bold;
     color: #ffffff; 
     margin-bottom: 10px;
-    justify-self: start;
 }
 
 .parrafo1 {
