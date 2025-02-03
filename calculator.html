@@ -1,0 +1,31 @@
+<div class="calculator-wrapper">
+    <!-- Contenido de los sliders -->
+    <div class="calculator-content">
+        <h2 class="calculator-title">Monthly Calculator</h2>
+        <div class="input-group">
+            <label for="investment"><b>Monthly Advertising Investment:</b></label>
+            <div class="input-with-symbol">
+                <span>$</span>
+                <input type="number" id="investment" value="1000">
+            </div>
+            <input type="range" id="investment-slider" min="100" max="2000" step="100" value="1000">
+        </div>
+        <div class="input-group">
+            <label for="price"><b>Average Product Price:</b></label>
+            <div class="input-with-symbol">
+                <span>$</span>
+                <input type="number" id="price" value="100">
+            </div>
+            <input type="range" id="price-slider" min="100" max="3000" step="100" value="100">
+        </div>
+    </div>
+    <!-- Resultados -->
+    <div class="results-container">
+        <p class="result-title">Projected Income:</p>
+        <p class="result-value" id="income">$5,000</p>
+        <p class="result-title">Potential Leads:</p>
+        <p class="result-value" id="leads">50</p>
+        <p class="cta-text">What are you waiting for to start and improve your sales?</p>
+        <button class="join-now-btn">Join Now</button>
+    </div>
+</div>
