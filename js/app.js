@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Incluir Navbar y configurar su funcionalidad
-    fetch('navbar.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('navbar-container').innerHTML = data;
-            setupMenuToggle();  
-            setupDropdownMenus(); 
-        })
-        .catch(error => console.error("Error al cargar el navbar:", error));
+    // fetch('navbar.html')
+    //     .then(response => response.text())
+    //     .then(data => {
+    //         document.getElementById('navbar-container').innerHTML = data;
+    //         setupMenuToggle();  
+    //         setupDropdownMenus(); 
+    //     })
+    //     .catch(error => console.error("Error al cargar el navbar:", error));
 
     // Incluir Footer
     fetch('footer.html')
