@@ -144,7 +144,13 @@ header {
 
     .menu-toggle {
         display: block;
+        margin-right: -60px;
     }
+
+    .logo {
+        margin-left: -80px;
+    }
+
 }
 
 
@@ -490,6 +496,15 @@ header {
     .benefit-description {
         font-size: 0.95rem;
     }
+
+    .imagen_2 {
+        width: 25%;
+    }
+
+    .explication {
+        margin: 0 auto 0px auto;
+    }
+
 }
 
 .training {
@@ -692,7 +707,7 @@ header {
     margin-top: 80px;                 
 }
 
-.about-title { /* SOLO afecta este título específico */
+.about-title { 
     flex: 1;                     
     text-align: right;           
     font-size: 1.5rem;          
@@ -713,6 +728,33 @@ header {
     box-shadow: 6px 4px 8px rgba(15, 226, 212, 0.619);
 
 }
+@media screen and (max-width: 1024px) {
+    .imagen_3 {
+        width: 100%; 
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .title-img {
+        flex-direction: column;
+        margin-top: 50px;
+    }
+
+    .imagen_3 {
+        width: 100%; 
+        max-width: 100%; 
+        box-shadow: 4px 3px 6px rgba(15, 226, 212, 0.5);
+    }
+
+    .about-title{
+        text-align: center;
+    }
+}
+
+/* responsive img3 */
+
+
 
 .pricing-container {
     display: flex;
