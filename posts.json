@@ -1,0 +1,17 @@
+[
+    {
+        "title": "The Importance and Impact of WhatsApp in Today’s Business World",
+        "date": "2025-02-01",
+        "category": "marketing",
+        "content": "El mundo de los negocios está en constante evolución...",
+        "image": "img/business-post.jpg"
+    },
+    {
+        "title": "Impacto de la IA en Marketing",
+        "author": "Ana López",
+        "date": "2025-02-02",
+        "category": "ai",
+        "content": "La inteligencia artificial está revolucionando las estrategias de marketing.",
+        "image": "img/ai-marketing.jpg"
+    }
+]

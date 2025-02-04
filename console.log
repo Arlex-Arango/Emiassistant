@@ -1,0 +1,20 @@
+async function loadPosts() {
+    let posts = JSON.parse(localStorage.getItem("posts")) || [];
+    console.log("Posts cargados desde localStorage:", posts);
+
+    if (posts.length === 0) {
+        try {
+            const response = await fetch("posts.json");
+            console.log("Intentando cargar posts desde posts.json...");
+            posts = await response.json();
+            console.log("Posts cargados desde posts.json:", posts);
+            localStorage.setItem("posts", JSON.stringify(posts));
+        } catch (error) {
+            console.error("Error al cargar los posts:", error);
+            postsContainer.innerHTML = "<p>No se pudieron cargar los posts.</p>";
+            return;
+        }
+    }
+
+    displayPosts(posts, "all");
+}

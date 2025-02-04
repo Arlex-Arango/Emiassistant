@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Crear Post</title>
+    <link rel="stylesheet" href="css/style-blog.css">
+</head>
+<body>
+    <h1>Crear Nuevo Post</h1>
+    <form id="post-form">
+        <label for="title">Título:</label>
+        <input type="text" id="title" required>
+
+        <label for="author">Autor:</label>
+        <input type="text" id="author" required>
+
+        <label for="date">Fecha:</label>
+        <input type="date" id="date" required>
+
+        <label for="category">Categoría:</label>
+        <select id="category" required>
+            <option value="business">Business</option>
+            <option value="ai">AI</option>
+            <option value="marketing">Marketing</option>
+            <option value="sales">Sales</option>
+        </select>
+
+        <label for="content">Contenido:</label>
+        <textarea id="content" rows="5" required></textarea>
+
+        <button type="submit">Guardar Post</button>
+    </form>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
