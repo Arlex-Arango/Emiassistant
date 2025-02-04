@@ -3,35 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - Crear Post</title>
-    <link rel="stylesheet" href="css/style-blog.css">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1>Crear Nuevo Post</h1>
-    <form id="post-form">
-        <label for="title">Título:</label>
-        <input type="text" id="title" required>
+    <header>
+        <h1>Admin Panel</h1>
+    </header>
+    <main>
+        <!-- Formulario para agregar posts -->
+        <section>
+            <h2>Agregar Nuevo Post</h2>
+            <form id="add-post-form">
+                <label for="title">Título:</label>
+                <input type="text" id="title" required>
+                
+                <label for="author">Autor:</label>
+                <input type="text" id="author" required>
+                
+                <label for="date">Fecha:</label>
+                <input type="date" id="date" required>
+                
+                <label for="category">Categoría:</label>
+                <select id="category" required>
+                    <option value="business">Business</option>
+                    <option value="ai">AI</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="sales">Sales</option>
+                </select>
+                
+                <label for="content">Contenido:</label>
+                <textarea id="content" required></textarea>
+                
+                <label for="image">Imagen:</label>
+                <input type="file" id="image" accept="image/*" required>
+                
+                <button type="submit">Agregar Post</button>
+            </form>
+        </section>
 
-        <label for="author">Autor:</label>
-        <input type="text" id="author" required>
-
-        <label for="date">Fecha:</label>
-        <input type="date" id="date" required>
-
-        <label for="category">Categoría:</label>
-        <select id="category" required>
-            <option value="business">Business</option>
-            <option value="ai">AI</option>
-            <option value="marketing">Marketing</option>
-            <option value="sales">Sales</option>
-        </select>
-
-        <label for="content">Contenido:</label>
-        <textarea id="content" rows="5" required></textarea>
-
-        <button type="submit">Guardar Post</button>
-    </form>
-
+        <!-- Lista de posts -->
+        <section>
+            <h2>Lista de Posts</h2>
+            <div id="posts-list">
+                <!-- Aquí se mostrarán los posts existentes -->
+            </div>
+        </section>
+    </main>
     <script src="js/admin.js"></script>
 </body>
 </html>
