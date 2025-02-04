@@ -134,6 +134,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    function scrollToTop() {
+        window.scrollTo(0, 0);
+    }
+    
     
     setupMenuToggle();
     setupDropdownMenus();
