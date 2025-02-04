@@ -16,36 +16,34 @@
 <body>
     <header>
         <nav class="navbar">
-            <a href="#" class="logo">MiLogo</a>
+            <a href="index.html" class="logo">MiLogo</a>
             <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
-            
+
             <ul class="nav-links">
                 <li class="nav-item">
                     <span class="nav-link" data-dropdown="features">Features</span>
                     <div class="dropdown" id="features-dropdown">
-                        <a href="#" class="dropdown-link">Analytics</a>
-                        <a href="#" class="dropdown-link">Team Management</a>
-                        <a href="#" class="dropdown-link">Integrations</a>
-                        <a href="#" class="dropdown-link">Developer API</a>
+                        <a href="emiio.html" class="dropdown-link">EMI IO</a>
+                        <a href="emisales.html" class="dropdown-link">EMI SALES</a>
+
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Price</a>
+                    <a href="plans.html" class="nav-link">Price</a>
                 </li>
                 <li class="nav-item">
                     <span class="nav-link" data-dropdown="resources">Resources</span>
                     <div class="dropdown" id="resources-dropdown">
-                        <a href="#" class="dropdown-link">Documentation</a>
-                        <a href="#" class="dropdown-link">Blog</a>
-                        <a href="#" class="dropdown-link">Community</a>
-                        <a href="#" class="dropdown-link">Support</a>
+                        <a href="training.html" class="dropdown-link">Training</a>
+                        <a href="blog.html" class="dropdown-link">Blog</a>
+
                     </div>
                 </li>
             </ul>
-    
+
             <div class="auth-buttons">
-                <a href="#" class="login-btn">Log In</a>
-                <a href="#" class="join-btn">Join Now</a>
+                <a href="https://my.emiassistant.com" class="login-btn">Log In</a>
+                <a href="plans.html" class="join-btn">Join Now</a>
             </div>
         </nav>
     </header>
@@ -53,7 +51,8 @@
     <section class="form-section">
         <div class="container">
             <div class="video-title-container">
-                <div class="video-title">Learn how to get 1 client<br> a day using<br> WhatsApp and <br> Artificial Intelligence!
+                <div class="video-title">Learn how to get 1 client<br> a day using<br> WhatsApp and <br> Artificial
+                    Intelligence!
 
                 </div>
                 <div class="video-container">
@@ -63,14 +62,15 @@
                     </video>
                 </div>
             </div>
-    
+
             <div class="training-form">
                 <h2>Free Training</h2>
-                <p>📲 In this short video training, you’ll see through a real case how I attract leads, move them to WhatsApp, and convert them into clients.</p>
+                <p>📲 In this short video training, you’ll see through a real case how I attract leads, move them to
+                    WhatsApp, and convert them into clients.</p>
                 <p>✍️ The entire process from start to finish, explained step by step.</p>
                 <p>⏳ It will be available for a limited time.</p>
                 <p>👇 Sign up now and get it</p>
-    
+
                 <form id="training-form" class="training-form">
                     <label for="name">Name</label>
                     <input type="text" id="name" required placeholder="Enter your name" />
@@ -86,34 +86,34 @@
         // Función para manejar el formulario
         document.getElementById('training-form').addEventListener('submit', function (event) {
             event.preventDefault();
-        
+
             // Obtén los valores de los campos
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const message = document.getElementById('form-message');
-        
+
             // Validar que los campos no estén vacíos
             if (!name || !email) {
                 message.textContent = "Error! Please enter this field"; // Mensaje de error si los campos están vacíos
                 message.style.color = 'red';
                 return;
             }
-        
+
             // Intentar conectar con la base de datos (ejemplo de lógica, debes adaptarlo a tu backend)
             const isDatabaseConnected = false; // Simulamos que no se puede conectar a la base de datos
-        
+
             if (!isDatabaseConnected) {
-                message.textContent = "Could not connect to the database. Please try again."; 
+                message.textContent = "Could not connect to the database. Please try again.";
                 message.style.color = 'red';
             } else {
-                message.textContent = "Watch the video"; 
+                message.textContent = "Watch the video";
                 message.style.color = 'green';
-        
+
                 // Llamar a la función para reproducir el video aquí
                 playVideo(); // Esta función debes implementarla para reproducir el video
             }
         });
-        
+
         // Función para reproducir el video
         function playVideo() {
             const video = document.getElementById("myVideo"); // Asumimos que el video tiene el ID "myVideo"
@@ -121,8 +121,8 @@
                 video.play(); // Reproduce el video si todo es correcto
             }
         }
-        </script>
-    
+    </script>
+
     <section class="training-section">
         <div class="container">
             <div class="section-header">
@@ -152,11 +152,42 @@
                 </div>
             </div>
         </div>
-    </section>
-    
+        <section class="custom-section">
+            <div class="container-grid">
+                <div class="image-container">
+                    <img src="Imagenes/Carlos.jpg" alt="Descripción de la imagen">
+                </div>
+                <div class="text-container">
+                    <h1>You will see the <br><span class="moztaza"> entire process,</span> uncensored.</h1>
+                    <p>
+                        After trying hundreds of complex strategies, <br>with many emails and complicated automations, <br>we found a simple yet effective system to acquire<br> clients on a recurring basis..
+                    </p>
+                </div>
+            </div>
+        </section>
+    <section class="more-section">
+        <div class="text-container">
+            <div class="text-container">
+                <h1>Who <span class="moztaza"> is it for?</span></h1>
+                <h2>This training is for:</h2>
+                <p>
+                    👉 Entrepreneurs who have a good product or service and want to sell it online but have no knowledge of Digital Marketing.
 
-    <footer>
-        <div id="footer-container"></div>
-    </footer>
-    <script src="js/app.js"></script>
-</body>    
+                    ​<br>
+                    
+                    👉 It's also for you if you're looking to learn a new skill to offer to other businesses and charge for it
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+        <footer>
+            <div id="footer-container"></div>
+        </footer>
+        <script src="js/app.js"></script>
+</body>
+</html>

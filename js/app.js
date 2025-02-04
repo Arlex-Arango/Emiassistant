@@ -1,14 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Incluir Navbar y configurar su funcionalidad
-    // fetch('navbar.html')
-    //     .then(response => response.text())
-    //     .then(data => {
-    //         document.getElementById('navbar-container').innerHTML = data;
-    //         setupMenuToggle();  
-    //         setupDropdownMenus(); 
-    //     })
-    //     .catch(error => console.error("Error al cargar el navbar:", error));
-
+    
     // Incluir Footer
     fetch('footer.html')
         .then(response => response.text())
@@ -43,9 +34,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Función para manejar dropdowns (submenu en navbar)
     function setupDropdownMenus() {
-        document.querySelectorAll(".dropdown").forEach(dropdown => {
-            const button = dropdown.querySelector(".dropdown-toggle");
-            const menu = dropdown.querySelector(".dropdown-menu");
+        document.querySelectorAll(".nav-item").forEach(item => {
+            const button = item.querySelector(".nav-link[data-dropdown]");
+            const menu = item.querySelector(".dropdown");
 
             if (button && menu) {
                 // Mostrar dropdown en hover (solo en pantallas grandes)
@@ -53,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (window.innerWidth > 768) menu.style.display = "block";
                 });
 
-                dropdown.addEventListener("mouseleave", () => {
+                item.addEventListener("mouseleave", () => {
                     if (window.innerWidth > 768) menu.style.display = "none";
                 });
 
@@ -64,8 +55,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
 
                 // Cerrar el dropdown si se hace clic fuera
-                document.addEventListener("click", function () {
-                    menu.style.display = "none";
+                document.addEventListener("click", function (e) {
+                    if (!item.contains(e.target)) {
+                        menu.style.display = "none";
+                    }
                 });
             }
         });
@@ -141,5 +134,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    
+    setupMenuToggle();
+    setupDropdownMenus();
     initializeFAQs();
 });
