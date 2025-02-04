@@ -568,6 +568,7 @@ header {
     border-radius: 10px;
 }
 
+
 /* 📌 Responsive para tablets */
 @media screen and (max-width: 1024px) {
     .training-container {
@@ -1864,11 +1865,13 @@ section.sales {
     font-size: 1.8rem;
     color: #333;
     margin-bottom: 15px;
+    margin: 15px;
 }
 
 .training-item p {
     font-size: 1rem;
     color: #555;
+    margin: 10px;
 }
 
 /* Responsive */
