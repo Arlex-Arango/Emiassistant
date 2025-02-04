@@ -3,65 +3,67 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuLinks = document.querySelectorAll(".blog-menu a");
 
     function loadPosts() {
-        return JSON.parse(localStorage.getItem("posts")) || [];
+        let posts = JSON.parse(localStorage.getItem("posts")) || [];
+        displayPosts(posts, "all");
     }
 
-    function displayPosts(category = "all") {
-        const posts = loadPosts();
-        const filteredPosts = category === "all" 
-            ? posts 
-            : posts.filter(post => post.category === category);
-
+    function displayPosts(posts, category) {
         postsContainer.innerHTML = "";
-        
+        const filteredPosts = category === "all" ? posts : posts.filter(post => post.category === category);
+
         if (filteredPosts.length === 0) {
-            postsContainer.innerHTML = "<p>No posts found in this category.</p>";
+            postsContainer.innerHTML = "<p>No hay posts en esta categoría.</p>";
             return;
         }
 
-        filteredPosts.forEach((post, index) => {
+        filteredPosts.forEach(post => {
             const postElement = document.createElement("div");
             postElement.classList.add("post");
             postElement.innerHTML = `
                 <h2>${post.title}</h2>
-                <p><strong>${post.author}</strong> - ${post.date}</p>
-                <p>${post.content}</p>
-                <img src="${post.image}" class="post-image-small" onclick="expandImage('${post.image}')">
-                <button class="delete-post" data-index="${index}">🗑 Delete</button>
+                <img src="${post.image}" alt="Imagen del post" class="small-image">
+                <p><strong>${post.category}</strong> - ${post.date}</p>
+                <p>${post.content.substring(0, 100)}...</p>
+                <button class="view-post" data-id="${post.id}">Leer más</button>
             `;
+
+            postElement.querySelector(".view-post").addEventListener("click", function () {
+                openPost(post.id);
+            });
+
             postsContainer.appendChild(postElement);
         });
+    }
 
-        // Asignar eventos de eliminación
-        document.querySelectorAll(".delete-post").forEach(button => {
-            button.addEventListener("click", function () {
-                deletePost(this.getAttribute("data-index"));
-            });
+    function openPost(postId) {
+        let posts = JSON.parse(localStorage.getItem("posts")) || [];
+        const post = posts.find(p => p.id === postId);
+
+        if (!post) return;
+
+        postsContainer.innerHTML = `
+            <div class="full-post">
+                <h2>${post.title}</h2>
+                <img src="${post.image}" alt="Imagen del post" class="large-image">
+                <p><strong>${post.category}</strong> - ${post.date}</p>
+                <p>${post.content}</p>
+                <button class="back-to-all">⬆ Volver a All Posts</button>
+            </div>
+        `;
+
+        document.querySelector(".back-to-all").addEventListener("click", function () {
+            loadPosts();
         });
     }
 
-    function deletePost(index) {
-        let posts = loadPosts();
-        posts.splice(index, 1);
-        localStorage.setItem("posts", JSON.stringify(posts));
-        displayPosts("all");
-    }
-
-    // Filtrar posts por categoría
     menuLinks.forEach(link => {
         link.addEventListener("click", function (event) {
             event.preventDefault();
             const category = this.getAttribute("data-category");
-            displayPosts(category);
+            loadPosts();
+            displayPosts(JSON.parse(localStorage.getItem("posts")), category);
         });
     });
 
-    // Cargar posts al iniciar
-    displayPosts();
+    loadPosts();
 });
-
-// Función para agrandar la imagen
-function expandImage(src) {
-    const newWindow = window.open("");
-    newWindow.document.write(`<img src="${src}" style="width:100%">`);
-}
