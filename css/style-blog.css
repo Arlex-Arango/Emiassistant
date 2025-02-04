@@ -13,20 +13,12 @@ body {
     justify-content: center;
     align-items: center;
     position: sticky;
-    top: 100px; /* Ajustado a 60px (altura del menú principal) + 40px de separación */
+    top: 60px; /* Justo debajo del menú principal */
     z-index: 1000;
     background-color: transparent; /* Transparente */
     padding: 10px 0;
     border-bottom: 1px solid #ffffff30; /* Línea semitransparente */
 }
-
-/* Espaciado adicional entre el menú principal y el contenido */
-body {
-    margin-top: 100px; /* Para compensar la altura del menú principal y el espaciado adicional */
-}
-
-/* Otros estilos no cambian */
-
 
 .blog-menu ul {
     list-style: none;
@@ -127,3 +119,4 @@ body {
         flex-wrap: wrap;
     }
 }
+

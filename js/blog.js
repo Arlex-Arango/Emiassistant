@@ -2,85 +2,68 @@ document.addEventListener("DOMContentLoaded", function () {
     const postsContainer = document.getElementById("posts-container");
     const menuLinks = document.querySelectorAll(".blog-menu a");
 
-    // Función para cargar posts desde localStorage o el archivo JSON
-    async function loadPosts() {
+    function loadPosts() {
         let posts = JSON.parse(localStorage.getItem("posts")) || [];
-
-        if (posts.length === 0) {
-            try {
-                const response = await fetch("posts.json"); // Asegúrate de que la ruta sea correcta
-                if (!response.ok) throw new Error("No se pudo cargar el archivo JSON.");
-                posts = await response.json();
-                localStorage.setItem("posts", JSON.stringify(posts)); // Guardar en localStorage
-            } catch (error) {
-                console.error("Error al cargar los posts:", error);
-                postsContainer.innerHTML = "<p>No se pudieron cargar los posts.</p>";
-                return;
-            }
-        }
-
-        displayPosts(posts, "all"); // Mostrar todos los posts al inicio
+        displayPosts(posts, "all");
     }
 
-    // Función para mostrar los posts según la categoría seleccionada
     function displayPosts(posts, category) {
-        postsContainer.innerHTML = ""; // Limpiar el contenedor antes de mostrar nuevos posts
+        postsContainer.innerHTML = "";
         const filteredPosts = category === "all" ? posts : posts.filter(post => post.category === category);
 
         if (filteredPosts.length === 0) {
-            postsContainer.innerHTML = `<p>No hay posts en esta categoría.</p>`;
+            postsContainer.innerHTML = "<p>No hay posts en esta categoría.</p>";
             return;
         }
 
         filteredPosts.forEach(post => {
             const postElement = document.createElement("div");
             postElement.classList.add("post");
-
-            // Crear HTML para el índice con imagen pequeña
             postElement.innerHTML = `
-                <div class="post-preview">
-                    <img src="${post.image}" alt="${post.title}" class="post-thumbnail">
-                    <div class="post-info">
-                        <h2>${post.title}</h2>
-                        <p><strong>${post.author}</strong> - ${post.date}</p>
-                        <p>${post.content.substring(0, 100)}...</p>
-                        <button class="view-post">Leer más</button>
-                    </div>
-                </div>
+                <h2>${post.title}</h2>
+                <img src="${post.image}" alt="Imagen del post" class="small-image">
+                <p><strong>${post.category}</strong> - ${post.date}</p>
+                <p>${post.content.substring(0, 100)}...</p>
+                <button class="view-post" data-id="${post.id}">Leer más</button>
             `;
 
-            // Evento para ampliar el post al hacer clic en "Leer más"
-            postElement.querySelector(".view-post").addEventListener("click", () => {
-                postsContainer.innerHTML = `
-                    <div class="full-post">
-                        <img src="${post.image}" alt="${post.title}" class="full-image">
-                        <h2>${post.title}</h2>
-                        <p><strong>${post.author}</strong> - ${post.date}</p>
-                        <p>${post.content}</p>
-                        <button class="back-to-all">⬆ Volver a All Posts</button>
-                    </div>
-                `;
-
-                // Botón para volver al índice
-                document.querySelector(".back-to-all").addEventListener("click", () => {
-                    displayPosts(posts, "all");
-                });
+            postElement.querySelector(".view-post").addEventListener("click", function () {
+                openPost(post.id);
             });
 
             postsContainer.appendChild(postElement);
         });
     }
 
-    // Manejo de clics en el menú de categorías
+    function openPost(postId) {
+        let posts = JSON.parse(localStorage.getItem("posts")) || [];
+        const post = posts.find(p => p.id === postId);
+
+        if (!post) return;
+
+        postsContainer.innerHTML = `
+            <div class="full-post">
+                <h2>${post.title}</h2>
+                <img src="${post.image}" alt="Imagen del post" class="large-image">
+                <p><strong>${post.category}</strong> - ${post.date}</p>
+                <p>${post.content}</p>
+                <button class="back-to-all">⬆ Volver a All Posts</button>
+            </div>
+        `;
+
+        document.querySelector(".back-to-all").addEventListener("click", function () {
+            loadPosts();
+        });
+    }
+
     menuLinks.forEach(link => {
         link.addEventListener("click", function (event) {
             event.preventDefault();
             const category = this.getAttribute("data-category");
-            const posts = JSON.parse(localStorage.getItem("posts"));
-            displayPosts(posts, category);
+            loadPosts();
+            displayPosts(JSON.parse(localStorage.getItem("posts")), category);
         });
     });
 
-    // Cargar los posts al iniciar la página
     loadPosts();
 });
