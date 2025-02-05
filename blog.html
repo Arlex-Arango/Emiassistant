@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,19 +12,18 @@
 </head>
 
 <body>
-    <!-- Encabezado con menú de navegación -->
     <header>
         <nav class="navbar">
             <a href="index.html" class="logo"><img src="Imagenes/1.png" alt=""></a>
             <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
-            
+
             <ul class="nav-links">
                 <li class="nav-item">
                     <span class="nav-link" data-dropdown="features">Features</span>
                     <div class="dropdown" id="features-dropdown">
                         <a href="emiio.html" class="dropdown-link">EMI IO</a>
                         <a href="emisales.html" class="dropdown-link">EMI SALES</a>
-                       
+
                     </div>
                 </li>
                 <li class="nav-item">
@@ -34,37 +34,26 @@
                     <div class="dropdown" id="resources-dropdown">
                         <a href="training.html" class="dropdown-link">Training</a>
                         <a href="blog.html" class="dropdown-link">Blog</a>
-                       
+
                     </div>
                 </li>
             </ul>
-    
+
             <div class="auth-buttons">
                 <a href="https://my.emiassistant.com" class="login-btn">Log In</a>
                 <a href="plans.html" class="join-btn">Join Now</a>
             </div>
         </nav>
     </header>
-
-    <!-- Sección principal del blog -->
     <section id="blog">
-        <!-- Menú de categorías -->
         <nav class="blog-menu">
-            <ul>
-                <li><a href="#" data-category="all" class="selected">All Posts</a></li>
-                <li><a href="#" data-category="business">Business</a></li>
-                <li><a href="#" data-category="ai">AI</a></li>
-                <li><a href="#" data-category="marketing">Marketing</a></li>
-                <li><a href="#" data-category="sales">Sales</a></li>
+            <ul id="category-list">
             </ul>
         </nav>
 
-        <!-- Contenedor donde se listarán los posts -->
         <div id="posts-container">
-            <!-- Los posts se cargarán dinámicamente aquí -->
         </div>
 
-        <!-- Vista de un post completo -->
         <div id="full-post" style="display: none;">
             <button id="back-to-posts" class="back-to-posts">← Volver a Posts</button>
             <h2 id="full-post-title"></h2>
@@ -74,8 +63,8 @@
             <p id="full-post-content"></p>
         </div>
     </section>
-
-    <!-- Script para manejar la lógica del blog -->
     <script src="js/blog.js"></script>
+    <script src="js/nav.js"></script>
 </body>
+
 </html>

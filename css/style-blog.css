@@ -1,4 +1,3 @@
-/* Blog menú de categorías */
 .blog-menu {
     display: flex;
     justify-content: center;
@@ -29,42 +28,39 @@
 .blog-menu a.selected,
 .blog-menu a:hover {
     font-weight: 700;
-    border-bottom: 2px solid #ffffff; /* Línea de selección */
+    border-bottom: 2px solid #ffffff; 
 }
-
-/* Contenedor de los posts */
 #posts-container {
-    display: flex; /* Cambiar a flexbox */
-    flex-wrap: nowrap; /* No permitir que los elementos bajen de línea */
-    gap: 20px; /* Espacio entre posts */
-    overflow-x: auto; /* Habilitar scroll horizontal si es necesario */
+    display: flex; 
+    flex-wrap: nowrap; 
+    gap: 20px;
+    overflow-x: auto;
     padding: 20px;
-    max-width: 100%; /* Asegurar que ocupe el ancho completo */
+    max-width: 100%;
     margin: 0 auto;
-    scrollbar-width: thin; /* Scrollbar más delgado para navegadores compatibles */
+    scrollbar-width: thin; 
     scrollbar-color: #888 #333;
 }
 
 #posts-container::-webkit-scrollbar {
-    height: 8px; /* Altura del scrollbar */
+    height: 8px;
 }
 
 #posts-container::-webkit-scrollbar-thumb {
-    background-color: #888; /* Color del scroll */
+    background-color: #888; 
     border-radius: 4px;
 }
 
 #posts-container::-webkit-scrollbar-track {
-    background-color: #333; /* Fondo del scroll */
+    background-color: #333; 
 }
 
-/* Tarjeta de post */
 .post {
-    min-width: 250px; /* Ancho mínimo para cada tarjeta */
-    max-width: 300px; /* Ancho máximo para cada tarjeta */
-    background-color: #1e1e1e; /* Fondo oscuro */
+    min-width: 250px; 
+    max-width: 300px; 
+    background-color: #1e1e1e; 
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
     display: flex;
@@ -77,15 +73,13 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); 
 }
 
-/* Imagen dentro del post */
 .post img {
     width: 100%;
     height: 150px; 
-    object-fit: cover; /* Recorta imagen para encajar */
+    object-fit: cover;
     border-bottom: 1px solid #ffffff30;
 }
 
-/* Contenido del post */
 .post h2 {
     font-size: 1rem;
     font-weight: 700;
@@ -95,11 +89,10 @@
 
 .post p {
     font-size: 0.9rem;
-    color: #cccccc; /* Texto más claro */
+    color: #cccccc;
     margin: 0 10px 10px;
 }
 
-/* Botón para ver más */
 .post .read-more {
     background-color: #ffffff;
     color: #121212;
@@ -118,7 +111,6 @@
     transform: scale(1.05);
 }
 
-/* Vista completa del post */
 #full-post {
     padding: 20px;
     max-width: 800px;
@@ -149,7 +141,6 @@
     margin-bottom: 15px;
 }
 
-/* Botón para volver a la lista de posts */
 .back-to-posts {
     background-color: #ffffff;
     color: #121212;
@@ -166,15 +157,76 @@
     background-color: #f5f5f5;
     transform: scale(1.1);
 }
+@media (max-width: 1024px) {
+    .blog-menu {
+        flex-wrap: wrap;
+        margin: 20px;
+    }
 
-/* Responsivo para pantallas pequeñas */
-@media (max-width: 768px) {
     #posts-container {
-        flex-wrap: wrap; /* Permitir que bajen en pantallas pequeñas */
+        flex-wrap: wrap; 
         justify-content: center;
     }
 
-    .blog-menu {
-        flex-wrap: wrap;
+    .post {
+        min-width: 220px;
+        max-width: 90%; 
     }
 }
+
+@media (max-width: 768px) {
+    .blog-menu {
+        flex-direction: column; 
+        align-items: center;
+        text-align: center;
+    }
+
+    .blog-menu ul {
+        flex-direction: column; 
+        gap: 10px;
+    }
+
+    #posts-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        gap: 15px;
+        
+    }
+
+    .post {
+        width: 90%; 
+        min-width: 250px;
+    }
+
+    .post img {
+        height: 120px; 
+    }
+
+    #full-post {
+        width: 95%;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-menu {
+        margin: 10px;
+    }
+
+    .post {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .post img {
+        height: 100px; 
+    }
+
+    .back-to-posts {
+        width: 100%;
+        text-align: center;
+    }
+}
+

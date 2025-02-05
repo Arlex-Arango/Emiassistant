@@ -1035,6 +1035,91 @@ input[type="range"]::-webkit-slider-thumb {
     background: #ffd700;
 }
 
+@media (max-width: 1024px) {
+    .calculator-wrapper {
+        flex-direction: column; /* Apila sliders y resultados */
+        padding: 20px;
+    }
+
+    .calculator-title {
+        font-size: 30px;
+    }
+
+    .results-container {
+        flex: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .calculator-wrapper {
+        padding: 15px;
+    }
+
+    .calculator-title {
+        font-size: 28px;
+    }
+
+    .input-group {
+        margin-bottom: 30px;
+    }
+
+    .input-with-symbol {
+        top: -30px;
+        width: 70px;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        width: 18px;
+        height: 18px;
+    }
+
+    .result-title {
+        font-size: 14px;
+    }
+
+    .result-value {
+        font-size: 20px;
+    }
+
+    .join-now-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .final-calculator {
+        padding: 20px;
+    }
+
+    .calculator-title {
+        font-size: 24px;
+    }
+
+    .calculator-wrapper {
+        padding: 10px;
+    }
+
+
+    input[type="range"] {
+        height: 6px;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        width: 15px;
+        height: 15px;
+    }
+
+    .result-value {
+        font-size: 18px;
+    }
+
+    .join-now-btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
 /* ======= FOOTER GENERAL ======= */
 footer {
     background-color: #1a1a1a;
@@ -1467,6 +1552,30 @@ footer {
     font-size: 1.2rem;
     color: #dcdcdc;
 }
+
+@media (max-width: 768px) {
+    .promo-stats {
+        justify-content: center;
+    }
+    .stat {
+        max-width: 80%; /* En móviles, cada stat ocupa el 80% */
+    }
+}
+
+@media (max-width: 480px) {
+    .stat {
+        max-width: 100%; /* En móviles pequeños, cada stat ocupa el 100% */
+        padding: 15px;
+    }
+
+    .stat i {
+        font-size: 1.8rem;
+    }
+
+    .stat p {
+        font-size: 1rem;
+    }
+}
 /* Estilos para la sección de Preguntas Frecuentes (FAQs) */
 .faq-section {
     padding: 50px 20px;
@@ -1682,6 +1791,63 @@ section.sales {
     color: #ff7b00; /* Color de resaltado */
 }
 
+@media (max-width: 1024px) {
+    .feature-card {
+        padding: 1.5rem;
+    }
+
+    .feature-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .feature-content p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .feature-card {
+        flex-direction: column; /* Apila imagen y texto en pantallas pequeñas */
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .feature-card img {
+        margin-bottom: 1rem;
+        width: 100px;
+        height: 100px;
+    }
+
+    .feature-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .feature-content p {
+        font-size: 0.9rem;
+        margin: 0; /* Quita márgenes laterales */
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-card {
+        padding: 1rem;
+    }
+
+    .feature-card img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .feature-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .feature-content p {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+}
+
 /* Estilos para la sección EMI SALES */
 .emi-sales {
     padding: 50px 20px;
@@ -1779,39 +1945,85 @@ section.sales {
 .video-title {
     color: white;
     font-size: 2.3rem;
+    margin-top: 80px;
     font-weight: bold;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
     z-index: 10;
 }
 
 /* Formulario debajo del título */
+/* Estilos generales */
 .training-form {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
     background-color: rgba(174, 172, 172, 0.658);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 100px auto;
+}
+
+/* Contenedor flex para dividir texto y formulario */
+.test {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    max-width: 400px; /* Reducí el ancho del formulario */
+    gap: 30px;
+}
+
+/* Estilos del texto */
+.training-text {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+}
+
+.training-text h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.training-text p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
 }
 
 /* Estilos del formulario */
-.training-form label {
-    font-size: 1rem;
-    color: #333;
+.training-box {
+    flex: 1;
+    max-width: 45%;
+    background-color: rgb(197 190 190 / 43%);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.training-form input {
-    padding: 10px;
+/* Campos del formulario */
+.training-box label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.training-box input {
+    padding: 15px;
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 
-.training-form button {
+/* Botón del formulario */
+.training-box button {
     background-color: #007BFF;
     color: white;
     padding: 10px 20px;
@@ -1823,10 +2035,11 @@ section.sales {
     margin-top: 20px;
 }
 
-.training-form button:hover {
+.training-box button:hover {
     background-color: #0056b3;
 }
 
+/* Mensaje del formulario */
 #form-message {
     margin-top: 10px;
     font-size: 1rem;
@@ -1838,6 +2051,25 @@ section.sales {
     color: green;
 }
 
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .test {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .training-text, 
+    .training-box {
+        max-width: 100%;
+    }
+
+    .training-text {
+        text-align: center;
+    }
+}
+
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     .video-title-container {
@@ -1846,15 +2078,23 @@ section.sales {
     }
 
     .video-container {
-        max-width: 100%; /* El video ocupa el 100% del ancho en pantallas pequeñas */
-        margin-bottom: 20px;
+        max-width: 100%; 
     }
 
-    .training-form {
-        width: 100%;
-        max-width: 350px; /* Reducí el ancho del formulario en pantallas pequeñas */
+    .video-title {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        text-align: center;
     }
+
+    .container {
+        padding: 0;
+    }
+
+    
 }
+
+
 
 .training-section {
     background: #fff;

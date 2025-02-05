@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="img/favicon.png" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -48,7 +47,7 @@
         </nav>
     </header>
 
-    <section class="form-section">
+    <section>
         <div class="container">
             <div class="video-title-container">
                 <div class="video-title">Learn how to get 1 client<br> a day using<br> WhatsApp and <br> Artificial
@@ -63,15 +62,26 @@
                 </div>
             </div>
 
-            <div class="training-form">
-                <h2>Free Training</h2>
-                <p>📲 In this short video training, you’ll see through a real case how I attract leads, move them to
-                    WhatsApp, and convert them into clients.</p>
-                <p>✍️ The entire process from start to finish, explained step by step.</p>
-                <p>⏳ It will be available for a limited time.</p>
-                <p>👇 Sign up now and get it</p>
+            
+        </div>
+    </section>
 
-                <form id="training-form" class="training-form">
+    <section>
+        <div class="training-form">
+            <!-- Contenedor que divide el texto y el formulario -->
+            <div class="test">
+                <!-- Texto a la izquierda -->
+                <div class="training-text">
+                    <h2>Free Training</h2>
+                    <p>📲 In this short video training, you’ll see through a real case how I attract leads, move them to
+                        WhatsApp, and convert them into clients.</p>
+                    <p>✍️ The entire process from start to finish, explained step by step.</p>
+                    <p>⏳ It will be available for a limited time.</p>
+                    <p>👇 Sign up now and get it</p>
+                </div>
+    
+                <!-- Formulario a la derecha -->
+                <form id="training-form" class="training-box">
                     <label for="name">Name</label>
                     <input type="text" id="name" required placeholder="Enter your name" />
                     <label for="email">Email</label>
@@ -82,6 +92,8 @@
             </div>
         </div>
     </section>
+    
+
     <script>
         // Función para manejar el formulario
         document.getElementById('training-form').addEventListener('submit', function (event) {
@@ -198,5 +210,6 @@
             <div id="footer-container"></div>
         </footer>
         <script src="js/app.js"></script>
+        <script src="js/nav.js"></script>
 </body>
 </html>
